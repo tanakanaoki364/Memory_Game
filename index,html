@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game Test</title>
+    <style>
+        /* 簡単なスタイル設定 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            gap: 10px;
+        }
+        .card {
+            width: 80px;
+            height: 120px;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .card.flip {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- カードの例 -->
+        <div class="card" onclick="flipCard(this)">1</div>
+        <div class="card" onclick="flipCard(this)">2</div>
+        <div class="card" onclick="flipCard(this)">3</div>
+        <div class="card" onclick="flipCard(this)">4</div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            // カードの拡大・縮小エフェクト
+            if (card.classList.contains('flip')) {
+                card.classList.remove('flip');
+            } else {
+                card.classList.add('flip');
+            }
+        }
+    </script>
+</body>
+</html>
